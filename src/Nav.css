@@ -1,0 +1,24 @@
+nav { padding: 50px; }
+
+nav > div { flex: 1; }
+
+nav a {
+    color: #7a8a9a;
+    text-decoration: none;
+    margin: 8px;
+    font-size: 18px;
+    display: inline-block;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #afbfcf;
+}
+
+@media only screen and (max-width: 720px) {
+    nav {
+        display: block;
+    }
+
+    nav a { font-size: 22px; }
+}

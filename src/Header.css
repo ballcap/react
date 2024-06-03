@@ -1,0 +1,22 @@
+header {
+    display: flex;
+    padding: 10px 50px;
+    background: #1a1a1a;
+}
+
+header > div { flex: 1; }
+
+header img {
+    max-height: 200px;
+}
+
+@media only screen and (max-width: 720px) {
+    header {
+        display: block;
+    }
+
+    header img {
+        max-width: 100%;
+        max-height: none;
+    }
+}
