@@ -3,6 +3,8 @@ form {
   background: #f0f7ff;
   border: solid 1px #f0f7ff;
   border-radius: 12px;
+  width: 60%;
+  margin: 10px auto;
 }
 
 form input[type="text"] {
