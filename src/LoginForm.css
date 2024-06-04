@@ -36,4 +36,12 @@
   margin: 10px 0;
   cursor: pointer;
   background: #3e4684;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 720px) {
+  .form-section form {
+    width: 90%;
+  }
 }
