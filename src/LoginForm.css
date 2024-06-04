@@ -1,0 +1,17 @@
+form input[type="text"] {
+  width: 100%;
+}
+
+form input[type="password"] {
+  width: 100%;
+}
+
+form button {
+  border: solid 2px #818181;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #eee;
+  padding: 16px;
+  margin: 10px 0;
+  cursor: pointer;
+}
