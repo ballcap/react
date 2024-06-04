@@ -1,11 +1,24 @@
+form {
+  padding: 30px 12px;
+  background: #f0f7ff;
+  border: solid 1px #f0f7ff;
+  border-radius: 12px;
+}
+
 form input[type="text"] {
   width: 100%;
   box-sizing: border-box;
+  background: #fff;
+  padding: 12px;
+  border-radius: 8px;
 }
 
 form input[type="password"] {
   width: 100%;
   box-sizing: border-box;
+  background: #fff;
+  padding: 12px;
+  border-radius: 8px;
 }
 
 form button {
