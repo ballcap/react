@@ -22,11 +22,12 @@ form input[type="password"] {
 }
 
 form button {
-  border: solid 2px #818181;
+  border: solid 1px #3e4684;
   border-radius: 10px;
   font-weight: bold;
   color: #eee;
   padding: 16px;
   margin: 10px 0;
   cursor: pointer;
+  background: #3e4684;
 }
