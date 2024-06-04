@@ -58,7 +58,7 @@ const LoginForm = () => {
           />
         </label>
       </div>
-      <button type="submit">Login</button>
+      <button type="submit">LOGIN</button>
       {error && <p style={{ color: 'red' }}>{error}</p>}
     </form>
     </section>
