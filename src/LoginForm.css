@@ -1,4 +1,4 @@
-.App form {
+.form-section form {
   padding: 30px 12px;
   background: #f0f7ff;
   border: solid 1px #f0f7ff;
@@ -7,7 +7,7 @@
   margin: 10px auto;
 }
 
-.App form input[type="text"] {
+.form-section form input[type="text"] {
   width: 100%;
   box-sizing: border-box;
   background: #fff;
@@ -17,7 +17,7 @@
   border: solid 1px #929292;
 }
 
-.App form input[type="password"] {
+.form-section form input[type="password"] {
   width: 100%;
   box-sizing: border-box;
   background: #fff;
@@ -27,7 +27,7 @@
   border: solid 1px #929292;
 }
 
-.App form button {
+.form-section form button {
   border: solid 1px #3e4684;
   border-radius: 10px;
   font-weight: bold;
