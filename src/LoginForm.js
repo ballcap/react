@@ -35,6 +35,8 @@ const LoginForm = () => {
 
   return (
     <section class="form-section">
+    <div>
+    <h1>LOG IN</h1>
     <form onSubmit={handleSubmit}>
       <div>
         <label>
@@ -61,6 +63,7 @@ const LoginForm = () => {
       <button type="submit">LOGIN</button>
       {error && <p style={{ color: 'red' }}>{error}</p>}
     </form>
+    </div>
     </section>
   );
 };
