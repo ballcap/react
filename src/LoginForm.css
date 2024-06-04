@@ -1,4 +1,4 @@
-form {
+form.App {
   padding: 30px 12px;
   background: #f0f7ff;
   border: solid 1px #f0f7ff;
@@ -7,7 +7,7 @@ form {
   margin: 10px auto;
 }
 
-form input[type="text"] {
+form.App input[type="text"] {
   width: 100%;
   box-sizing: border-box;
   background: #fff;
@@ -17,7 +17,7 @@ form input[type="text"] {
   border: solid 1px #929292;
 }
 
-form input[type="password"] {
+form.App input[type="password"] {
   width: 100%;
   box-sizing: border-box;
   background: #fff;
@@ -27,7 +27,7 @@ form input[type="password"] {
   border: solid 1px #929292;
 }
 
-form button {
+form.App button {
   border: solid 1px #3e4684;
   border-radius: 10px;
   font-weight: bold;
