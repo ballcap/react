@@ -7,27 +7,34 @@ function FormName() {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    try {
-      const response = await fetch('/result', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ fname, lname }),
-      });
+  try {
+    const response = await fetch('/v00/06052024/result', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ fname, lname }),
+    });
 
-      if (response.ok) {
-        const data = await response.json();
+    const text = await response.text(); // Get raw text
+    console.log('Response text:', text);
+
+    if (response.ok) {
+      if (text) {
+        const data = JSON.parse(text); // Parse text to JSON
         navigate('/result', { state: { fname: data.fname, lname: data.lname } });
       } else {
-        console.error('Form submission failed');
+        console.error('Empty response body');
       }
-    } catch (error) {
-      console.error('Error submitting form:', error);
+    } else {
+      console.error('Form submission failed');
     }
-  };
+  } catch (error) {
+    console.error('Error submitting form:', error);
+  }
+};
 
   return (
     <section>
