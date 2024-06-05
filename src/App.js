@@ -17,9 +17,9 @@ function App() {
       <div className="App">
         <Header />
         <Routes>
-          <Route path="/result" element= { <ResultComponent /> } />
-          <Route path="/about" element= { <About /> } />
-          <Route path="/contact" element= { <Contact /> } />
+          <Route path="/v00/06052024/result" element= { <ResultComponent /> } />
+          <Route path="/v00/about" element= { <About /> } />
+          <Route path="/v00/contact" element= { <Contact /> } />
         </Routes>
         <FormName />
         <LoginForm />
