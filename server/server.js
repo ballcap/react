@@ -24,6 +24,16 @@ app.post('/login', (req, res) => {
   }
 });
 
+app.post('/subscribe', (req, res) => {
+  const { email } = req.body;
+  console.log('Received subscription request:', { email });
+
+  // Perform your subscription logic here (e.g., save to database)
+  
+  // Send a success response
+  res.json({ success: true, message: 'Subscription successful' });
+});
+
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
 app.get('*', (req, res) => {
