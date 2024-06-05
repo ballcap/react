@@ -52,4 +52,4 @@ function FormName() {
   );
 }
 
-export default FormComponent;
+export default FormName;
