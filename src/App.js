@@ -8,13 +8,17 @@ import About from './About';
 import Contact from './Contact';
 import Footer from './Footer';
 import LoginForm from './LoginForm';
+import FormName from './FormName';
+import ResultComponent from './ResultComponent';
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Header />
+        <FormName />
         <Routes>
+          <Route path="/result" element= { <ResultComponent /> } />
           <Route path="/about" element= { <About /> } />
           <Route path="/contact" element= { <Contact /> } />
         </Routes>
