@@ -1,10 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Footer.css';
 
 function Footer() {
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await fetch('/subscribe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email }),
+            });
+
+            if (response.ok) {
+                setMessage('Your email has been added to the subscription.');
+                setEmail(''); // Clear the email input field
+            } else {
+                setMessage('There was an error subscribing. Please try again.');
+            }
+        } catch (error) {
+            setMessage('There was an error subscribing. Please try again.');
+        }
+    };
+
     return (
         <footer>
-           <div class="foot-1">
+           <div className="foot-1">
               <div>
                  <h1>Useful Links</h1>
                  <div><a href="#">Street Fighter</a></div>
@@ -16,21 +42,28 @@ function Footer() {
               </div>
               <div>
                  <h1>Newsletter</h1>
-                 <form method="post" action="/subscribe">
-                    <input type="email" placeholder="Email Address" required />
+                 <form onSubmit={handleSubmit}>
+                    <input 
+                      type="email" 
+                      placeholder="Email Address" 
+                      value={email} 
+                      onChange={(e) => setEmail(e.target.value)}
+                      required 
+                    />
                     <input type="submit" value="Subscribe" />
                  </form>
+                 {message && <p>{message}</p>}
               </div>
               <div>
                  <h1>Contact</h1>
-                 <div class="footer-address">
+                 <div className="footer-address">
                     <p>217 Botany Hill Crescent</p>
                     <p>Toronto, ON J3N 7C9</p>
                     <p>Canada</p>
                  </div>
               </div>
            </div>
-           <div class="foot-2">
+           <div className="foot-2">
               <p>&copy; React-This! 2024</p>
            </div>
         </footer>
