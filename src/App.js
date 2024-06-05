@@ -17,6 +17,7 @@ function App() {
       <div className="App">
         <Header />
         <Routes>
+          <Route path="/" element= { <FormName /> } />
           <Route path="/v00/06052024/result" element= { <ResultComponent /> } />
           <Route path="/v00/about" element= { <About /> } />
           <Route path="/v00/contact" element= { <Contact /> } />
