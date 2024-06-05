@@ -2,17 +2,19 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
+app.use(cors());
 
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, '../build')));
 
 // Simple login route
-app.post('/login', (req, res) => {
+app.post('/v00/06052024/login', (req, res) => {
   const { username, password } = req.body;
   console.log('Received login request:', { username, password });
 
@@ -24,7 +26,7 @@ app.post('/login', (req, res) => {
   }
 });
 
-app.post('/subscribe', (req, res) => {
+app.post('/v00/06052024/subscribe', (req, res) => {
   const { email } = req.body;
   console.log('Received subscription request:', { email });
 
@@ -32,6 +34,15 @@ app.post('/subscribe', (req, res) => {
   
   // Send a success response
   res.json({ success: true, message: 'Subscription successful' });
+});
+
+app.post('/v00/06052024/result', (req, res) => {
+  const { fname, lname } = req.body;
+  console.log('Received data:', { fname, lname });
+
+  // Perform any logic here (e.g., save to database)
+
+  res.json({ fname, lname });
 });
 
 // The "catchall" handler: for any request that doesn't
