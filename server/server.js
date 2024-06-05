@@ -2,13 +2,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
-app.use(cors());
 
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, '../build')));
@@ -34,20 +32,6 @@ app.post('/v00/06052024/subscribe', (req, res) => {
   
   // Send a success response
   res.json({ success: true, message: 'Subscription successful' });
-});
-
-app.post('/v00/06052024/result', (req, res) => {
-  const { fname, lname } = req.body;
-  console.log('Received data:', { fname, lname });
-
-  // Example logic (could be saving to database, etc.)
-
-  // Ensure to always return a valid JSON response
-  if (fname && lname) {
-    res.json({ fname, lname });
-  } else {
-    res.status(400).json({ error: 'Invalid input' });
-  }
 });
 
 // The "catchall" handler: for any request that doesn't
