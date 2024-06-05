@@ -7,15 +7,9 @@ function ResultComponent() {
 
   return (
     <div>
-      <h1>Submitted Data</h1>
-      {fname && lname ? (
-        <div>
-          <p>First Name: {fname}</p>
-          <p>Last Name: {lname}</p>
-        </div>
-      ) : (
-        <p>No data submitted</p>
-      )}
+      <h1>Result</h1>
+      <p>First Name: {fname}</p>
+      <p>Last Name: {lname}</p>
     </div>
   );
 }
