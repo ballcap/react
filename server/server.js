@@ -40,9 +40,14 @@ app.post('/v00/06052024/result', (req, res) => {
   const { fname, lname } = req.body;
   console.log('Received data:', { fname, lname });
 
-  // Perform any logic here (e.g., save to database)
+  // Example logic (could be saving to database, etc.)
 
-  res.json({ fname, lname });
+  // Ensure to always return a valid JSON response
+  if (fname && lname) {
+    res.json({ fname, lname });
+  } else {
+    res.status(400).json({ error: 'Invalid input' });
+  }
 });
 
 // The "catchall" handler: for any request that doesn't
